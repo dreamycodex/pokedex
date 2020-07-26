@@ -1,28 +1,50 @@
 import React from "react";
 
-function App() {
-  return (
-    <div>
-      <Logo />
-      <BestPokemon />
-    </div>
-  );
-}
+const Logo = () => {
+  const appName = "Welcome to Pokedex";
 
-function Logo() {
   return (
     <header>
-      <h1>Welcome to the Pokedex</h1>
+      <h1>{appName}</h1>
       <img
         src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png"
         alt="logo"
       />
     </header>
   );
-}
+};
 
-function BestPokemon() {
-  return <p>My favourite Pokemon is Squirtle</p>;
+
+const BestPokemon = () => {
+  const abilities = ['Anticipation', 'Adaptability', 'Run-Away'];  
+  return 
+  <p>My favourite Pokemon is Squirtle</p>
+  <ul>
+  {abilities.map((name) => {
+    return <li>
+      {name}
+    </li>;
+  })}
+  
+  </ul>
+
+};
+
+const CaughtPokemon = () => {
+  const date = new Date().toLocaleDateString();
+  return (
+  <p>Caught 0 Pokemon on {date}</p>);
+};
+
+
+function App() {
+  return (
+    <div>
+      <Logo />
+      <BestPokemon />
+      <CaughtPokemon />
+    </div>
+  );
 }
 
 export default App;
