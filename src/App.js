@@ -20,8 +20,8 @@ const BestPokemon = () => {
     <>
       <p>My favourite Pokemon is Squirtle"</p>
       <ul>
-        {abilities.map((trait) => (
-          <li>{trait}</li>
+        {abilities.map((ability, index) => (
+          <li key={index}>{ability}</li>
         ))}
       </ul>
     </>
