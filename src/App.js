@@ -1,7 +1,7 @@
 import React from "react";
 
 const Logo = () => {
-  const appName = "Welcome to Pokedex";
+  const appName = "Pokedex";
 
   return (
     <header>
@@ -14,28 +14,24 @@ const Logo = () => {
   );
 };
 
-
 const BestPokemon = () => {
-  const abilities = ['Anticipation', 'Adaptability', 'Run-Away'];  
-  return 
-  <p>My favourite Pokemon is Squirtle</p>
-  <ul>
-  {abilities.map((name) => {
-    return <li>
-      {name}
-    </li>;
-  })}
-  
-  </ul>
-
+  const abilities = ["Anticipation", "Adaptability", "Run-Away"];
+  return (
+    <>
+      <p>My favourite Pokemon is Squirtle"</p>
+      <ul>
+        {abilities.map((trait) => (
+          <li>{trait}</li>
+        ))}
+      </ul>
+    </>
+  );
 };
 
 const CaughtPokemon = () => {
   const date = new Date().toLocaleDateString();
-  return (
-  <p>Caught 0 Pokemon on {date}</p>);
+  return <p>Caught 0 Pokemon on {date}</p>;
 };
-
 
 function App() {
   return (
