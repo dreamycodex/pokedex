@@ -12,16 +12,14 @@ const BestPokemonFetcher = () => {
       });
   }, []);
 
-  if (!bestPokemon) {
-    return null;
-  } else {
+  return !bestPokemon ? null : (
     //console.log("Hello", bestPokemon);
-    return <BestPokemon pokemon={bestPokemon} />;
-  }
+    <BestPokemon pokemon={bestPokemon} />
+  );
 };
 
 const BestPokemon = (props) => {
-  console.log(props);
+  //console.log(props);
   console.log(props.pokemon.abilities);
   return (
     <div>
