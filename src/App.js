@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "./Logo";
 import BestPokemon from "./BestPokemon";
 import CaughtPokemon from "./CaughtPokemon";
+import BestPokemonSelector from "./BestPokemon";
 
 function App() {
   function LogWhenClicked() {
