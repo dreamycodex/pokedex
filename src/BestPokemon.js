@@ -4,6 +4,8 @@ const BestPokemonFetcher = (props) => {
   const [bestPokemon, setBestPokemon] = useState(null);
 
   useEffect(() => {
+    setBestPokemon(null);
+    console.log("Loading");
     fetch(`https://pokeapi.co/api/v2/pokemon/${props.pokemonId}/`)
       .then((res) => res.json())
       .then((data) => {
@@ -12,7 +14,9 @@ const BestPokemonFetcher = (props) => {
       });
   }, [props.pokemonId]);
 
-  return !bestPokemon ? null : (
+  return !bestPokemon ? (
+    "Loading..."
+  ) : (
     //console.log("Hello", bestPokemon);
     <BestPokemon pokemon={bestPokemon} />
   );
